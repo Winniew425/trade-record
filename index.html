@@ -80,8 +80,11 @@ svg{display:block; width:100%; height:auto}
 .bar.gain{fill:var(--gain)} .bar.loss{fill:var(--loss)}
 .barg{cursor:default}
 .barg:hover .bar{opacity:.78}
+/* SVG 文字要用 fill，唔係 color —— 用 color 會變預設黑色，
+   喺深色模式黑底黑字睇唔到（2026-08-02 修） */
 .blab{font-size:11px; font-weight:600;
   font-family:ui-monospace,Menlo,monospace}
+.blab.gain{fill:var(--gain)} .blab.loss{fill:var(--loss)}
 .zero{stroke:var(--ink-3); stroke-width:1}
 
 /* 一覽表 —— 唔設 min-width，窄螢幕收起次要欄位 */
@@ -150,6 +153,12 @@ td.b{font-weight:650}
   .card{padding:17px 15px}
   .rpnl{font-size:20px} .hero .v{font-size:29px}
 }
+/* SVG 靠 viewBox 縮放，喺窄螢幕字會一齊縮細（720 寬縮到約 350 = 0.49×）。
+   放大 user-unit 字級，令縮完之後仍然睇得清。 */
+@media (max-width:620px){
+  .blab{font-size:20px}
+  .axis{font-size:18px}
+}
 </style>
 </head>
 <body>
@@ -184,10 +193,10 @@ td.b{font-weight:650}
   <div class="card">
     <h2>資金曲線 · 美元</h2>
     <div class="box">
-      <svg viewBox="0 0 720 190" width="100%" height="190" role="img"
+      <svg viewBox="0 0 720 200" width="100%" height="200" role="img"
            aria-label="資金曲線，由 $500.00 到 $566.85">
-        <line class="grid" x1="54" y1="166.0" x2="708" y2="166.0"/><text class="axis" x="46" y="169.5" text-anchor="end">482</text><line class="grid" x1="54" y1="114.7" x2="708" y2="114.7"/><text class="axis" x="46" y="118.2" text-anchor="end">514</text><line class="grid" x1="54" y1="63.3" x2="708" y2="63.3"/><text class="axis" x="46" y="66.8" text-anchor="end">547</text><line class="grid" x1="54" y1="12.0" x2="708" y2="12.0"/><text class="axis" x="46" y="15.5" text-anchor="end">580</text><polygon class="eqfill" points="54.0,166.0 54.0,137.1 217.5,145.6 381.0,103.9 544.5,74.9 708.0,32.4 708.0,166.0"/>
-        <polyline class="eqline" points="54.0,137.1 217.5,145.6 381.0,103.9 544.5,74.9 708.0,32.4"/><circle class="eqdot" cx="54.0" cy="137.1" r="4"><title>開戶 — $500.00</title></circle><circle class="eqdot" cx="217.5" cy="145.6" r="4"><title>第 1 單後 — $494.60</title></circle><circle class="eqdot" cx="381.0" cy="103.9" r="4"><title>第 2 單後 — $521.12</title></circle><circle class="eqdot" cx="544.5" cy="74.9" r="4"><title>第 3 單後 — $539.54</title></circle><circle class="eqdot end" cx="708.0" cy="32.4" r="4"><title>第 4 單後 — $566.58</title></circle>
+        <line class="grid" x1="66" y1="174.0" x2="706" y2="174.0"/><text class="axis" x="58" y="177.5" text-anchor="end">482</text><line class="grid" x1="66" y1="121.3" x2="706" y2="121.3"/><text class="axis" x="58" y="124.8" text-anchor="end">514</text><line class="grid" x1="66" y1="68.7" x2="706" y2="68.7"/><text class="axis" x="58" y="72.2" text-anchor="end">547</text><line class="grid" x1="66" y1="16.0" x2="706" y2="16.0"/><text class="axis" x="58" y="19.5" text-anchor="end">580</text><polygon class="eqfill" points="66.0,174.0 66.0,144.4 226.0,153.1 386.0,110.3 546.0,80.6 706.0,36.9 706.0,174.0"/>
+        <polyline class="eqline" points="66.0,144.4 226.0,153.1 386.0,110.3 546.0,80.6 706.0,36.9"/><circle class="eqdot" cx="66.0" cy="144.4" r="4"><title>開戶 — $500.00</title></circle><circle class="eqdot" cx="226.0" cy="153.1" r="4"><title>第 1 單後 — $494.60</title></circle><circle class="eqdot" cx="386.0" cy="110.3" r="4"><title>第 2 單後 — $521.12</title></circle><circle class="eqdot" cx="546.0" cy="80.6" r="4"><title>第 3 單後 — $539.54</title></circle><circle class="eqdot end" cx="706.0" cy="36.9" r="4"><title>第 4 單後 — $566.58</title></circle>
       </svg>
     </div>
   </div>
@@ -195,18 +204,18 @@ td.b{font-weight:650}
   <div class="card">
     <h2>每單盈虧 · 美元</h2>
     <div class="box">
-      <svg viewBox="0 0 720 176" width="100%" height="176" role="img"
+      <svg viewBox="0 0 720 200" width="100%" height="200" role="img"
            aria-label="每單盈虧條形圖">
-        <line class="zero" x1="54" y1="79.0" x2="706" y2="79.0"/>
+        <line class="zero" x1="54" y1="93.0" x2="706" y2="93.0"/>
         <g class="barg"><title>第 1 單 · SL
 4109.63 → 4115.03（-5.40 點）
--5.40 美元</title><rect class="bar loss" x="112.5" y="79.0" width="46.0" height="10.7" rx="3"/><text class="blab loss" x="135.5" y="103.7" text-anchor="middle">-5.40</text><text class="axis" x="135.5" y="167" text-anchor="middle">01</text></g><g class="barg"><title>第 2 單 · TP
+-5.40 美元</title><rect class="bar loss" x="112.5" y="93.0" width="46.0" height="10.7" rx="3"/><text class="blab loss" x="135.5" y="122.7" text-anchor="middle">-5.40</text><text class="axis" x="135.5" y="188" text-anchor="middle">01</text></g><g class="barg"><title>第 2 單 · TP
 4110.67 → 4084.15（+26.52 點）
-+26.52 美元</title><rect class="bar gain" x="275.5" y="26.4" width="46.0" height="52.6" rx="3"/><text class="blab gain" x="298.5" y="20.4" text-anchor="middle">+26.52</text><text class="axis" x="298.5" y="167" text-anchor="middle">02</text></g><g class="barg"><title>第 3 單 · SL_PROFIT
++26.52 美元</title><rect class="bar gain" x="275.5" y="40.4" width="46.0" height="52.6" rx="3"/><text class="blab gain" x="298.5" y="32.4" text-anchor="middle">+26.52</text><text class="axis" x="298.5" y="188" text-anchor="middle">02</text></g><g class="barg"><title>第 3 單 · SL_PROFIT
 4078.05 → 4059.63（+18.42 點）
-+18.42 美元</title><rect class="bar gain" x="438.5" y="42.5" width="46.0" height="36.5" rx="3"/><text class="blab gain" x="461.5" y="36.5" text-anchor="middle">+18.42</text><text class="axis" x="461.5" y="167" text-anchor="middle">03</text></g><g class="barg"><title>第 4 單 · TP
++18.42 美元</title><rect class="bar gain" x="438.5" y="56.5" width="46.0" height="36.5" rx="3"/><text class="blab gain" x="461.5" y="48.5" text-anchor="middle">+18.42</text><text class="axis" x="461.5" y="188" text-anchor="middle">03</text></g><g class="barg"><title>第 4 單 · TP
 4054.10 → 4027.06（+27.04 點）
-+27.04 美元</title><rect class="bar gain" x="601.5" y="25.4" width="46.0" height="53.6" rx="3"/><text class="blab gain" x="624.5" y="19.4" text-anchor="middle">+27.04</text><text class="axis" x="624.5" y="167" text-anchor="middle">04</text></g>
++27.04 美元</title><rect class="bar gain" x="601.5" y="39.4" width="46.0" height="53.6" rx="3"/><text class="blab gain" x="624.5" y="31.4" text-anchor="middle">+27.04</text><text class="axis" x="624.5" y="188" text-anchor="middle">04</text></g>
       </svg>
     </div>
   </div>
@@ -304,7 +313,7 @@ td.b{font-weight:650}
   <div class="foot">
     起始 $500.00 · Swap 等調整 <span class="num">+0.27</span> ·
     截圖為 MetaTrader 5 實際成交紀錄，撳圖可放大<br>
-    生成於 2026-08-02 00:08
+    生成於 2026-08-02 00:13
   </div>
 </div>
 
