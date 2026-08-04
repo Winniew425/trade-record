@@ -71,7 +71,10 @@ body{
 .gain{color:var(--gain)} .loss{color:var(--loss)}
 
 /* 圖表 —— 唔設 min-width，SVG 用 viewBox 自己縮放，手機唔使右拉 */
-.box{width:100%}
+.box{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.box table{min-width:900px}
+.box td,.box th{white-space:nowrap}
+.cur{font-size:11px;opacity:.55;margin-left:3px}
 svg{display:block; width:100%; height:auto}
 .grid{stroke:var(--rule)} .axis{fill:var(--ink-3); font-size:10.5px;
   font-family:ui-monospace,Menlo,monospace}
@@ -261,11 +264,11 @@ td.b{font-weight:650}
     <h2>一覽表</h2>
     <div class="box">
       <table>
-        <thead><tr><th class="r">#</th><th class="opt">平倉</th><th>來源</th>
+        <thead><tr><th class="r">#</th><th class="opt">平倉</th><th>品種</th><th>方向</th><th>來源</th>
           <th class="r opt">入市</th><th class="r opt">出場</th>
-          <th class="r">點數</th><th class="r">盈虧</th>
+          <th class="r">點數</th><th class="r">盈虧 USC</th>
           <th>結果</th></tr></thead>
-        <tbody><tr><td class="r">01</td><td class="opt">07-30 23:16</td><td>V7</td><td class="r opt">4109.63</td><td class="r opt">4115.03</td><td class="r loss">-5.40</td><td class="r b loss">-5.40</td><td>SL</td></tr><tr><td class="r">02</td><td class="opt">07-31 04:39</td><td>V7</td><td class="r opt">4110.67</td><td class="r opt">4084.15</td><td class="r gain">+26.52</td><td class="r b gain">+26.52</td><td>TP</td></tr><tr><td class="r">03</td><td class="opt">07-31 14:11</td><td>人手</td><td class="r opt">4078.05</td><td class="r opt">4059.63</td><td class="r gain">+18.42</td><td class="r b gain">+18.42</td><td>SL_PROFIT</td></tr><tr><td class="r">04</td><td class="opt">07-31 16:40</td><td>人手</td><td class="r opt">4054.10</td><td class="r opt">4027.06</td><td class="r gain">+27.04</td><td class="r b gain">+27.04</td><td>TP</td></tr><tr><td class="r">05</td><td class="opt">08-03 04:01</td><td>V7</td><td class="r opt">4065.59</td><td class="r opt">4061.90</td><td class="r gain">+3.69</td><td class="r b gain">+3.69</td><td>MANUAL</td></tr><tr><td class="r">06</td><td class="opt">08-03 05:49</td><td>V7</td><td class="r opt">4060.49</td><td class="r opt">4063.35</td><td class="r gain">+2.86</td><td class="r b gain">+1.43</td><td>TP</td></tr><tr><td class="r">07</td><td class="opt">08-03 07:21</td><td>V7</td><td class="r opt">4061.34</td><td class="r opt">4070.30</td><td class="r loss">-8.96</td><td class="r b loss">-4.48</td><td>MANUAL</td></tr><tr><td class="r">08</td><td class="opt">08-03 08:04</td><td>人手</td><td class="r opt">4070.90</td><td class="r opt">4062.40</td><td class="r loss">-8.50</td><td class="r b loss">-4.25</td><td>SL</td></tr><tr><td class="r">09</td><td class="opt">08-03 09:57</td><td>V7</td><td class="r opt">4067.70</td><td class="r opt">4066.24</td><td class="r gain">+1.46</td><td class="r b gain">+0.73</td><td>MANUAL</td></tr><tr><td class="r">10</td><td class="opt">08-03 10:17</td><td>V7</td><td class="r opt">4063.58</td><td class="r opt">4055.27</td><td class="r gain">+8.31</td><td class="r b gain">+4.16</td><td>TP</td></tr><tr><td class="r">11</td><td class="opt">08-03 13:32</td><td>V7</td><td class="r opt">4056.00</td><td class="r opt">4051.71</td><td class="r loss">-4.29</td><td class="r b loss">-2.15</td><td>MANUAL</td></tr><tr><td class="r">12</td><td class="opt">08-03 16:15</td><td>V7</td><td class="r opt">28459.00</td><td class="r opt">28466.25</td><td class="r gain">+7.25</td><td class="r b gain">+3.63</td><td>MANUAL</td></tr><tr><td class="r">13</td><td class="opt">08-03 16:30</td><td>V7</td><td class="r opt">28444.88</td><td class="r opt">28393.38</td><td class="r gain">+51.50</td><td class="r b gain">+25.75</td><td>MANUAL</td></tr><tr><td class="r">14</td><td class="opt">08-03 16:36</td><td>V7</td><td class="r opt">4053.55</td><td class="r opt">4027.01</td><td class="r gain">+26.54</td><td class="r b gain">+13.27</td><td>MANUAL</td></tr><tr><td class="r">15</td><td class="opt">08-03 16:36</td><td>V7</td><td class="r opt">4037.60</td><td class="r opt">4026.89</td><td class="r gain">+10.71</td><td class="r b gain">+3.21</td><td>TP</td></tr><tr><td class="r">16</td><td class="opt">08-03 21:55</td><td>V7</td><td class="r opt">4032.15</td><td class="r opt">4045.14</td><td class="r loss">-12.99</td><td class="r b loss">-6.50</td><td>SL</td></tr><tr><td class="r">17</td><td class="opt">08-03 21:55</td><td>V7</td><td class="r opt">4036.01</td><td class="r opt">4045.17</td><td class="r loss">-9.16</td><td class="r b loss">-2.75</td><td>SL</td></tr><tr><td class="r">18</td><td class="opt">08-03 21:55</td><td>V7</td><td class="r opt">4031.96</td><td class="r opt">4045.17</td><td class="r loss">-13.21</td><td class="r b loss">-3.96</td><td>SL</td></tr><tr><td class="r">19</td><td class="opt">08-04 04:13</td><td>V7</td><td class="r opt">4057.10</td><td class="r opt">4048.35</td><td class="r gain">+8.75</td><td class="r b gain">+4.38</td><td>MANUAL</td></tr><tr><td class="r">20</td><td class="opt">08-04 04:13</td><td>V7</td><td class="r opt">4057.93</td><td class="r opt">4048.46</td><td class="r gain">+9.47</td><td class="r b gain">+2.84</td><td>MANUAL</td></tr><tr><td class="r">21</td><td class="opt">08-04 05:05</td><td>V7</td><td class="r opt">4050.02</td><td class="r opt">4056.78</td><td class="r gain">+6.76</td><td class="r b gain">+2.03</td><td>MANUAL</td></tr></tbody>
+        <tbody><tr><td class="r">01</td><td class="opt">07-30 23:16</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4109.63</td><td class="r opt">4115.03</td><td class="r loss">-5.40</td><td class="r b loss">-540.00</td><td>SL</td></tr><tr><td class="r">02</td><td class="opt">07-31 04:39</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4110.67</td><td class="r opt">4084.15</td><td class="r gain">+26.52</td><td class="r b gain">+2,652.00</td><td>TP</td></tr><tr><td class="r">03</td><td class="opt">07-31 14:11</td><td>XAUUSD</td><td>SELL 1.00</td><td>人手</td><td class="r opt">4078.05</td><td class="r opt">4059.63</td><td class="r gain">+18.42</td><td class="r b gain">+1,842.00</td><td>SL_PROFIT</td></tr><tr><td class="r">04</td><td class="opt">07-31 16:40</td><td>XAUUSD</td><td>SELL 1.00</td><td>人手</td><td class="r opt">4054.10</td><td class="r opt">4027.06</td><td class="r gain">+27.04</td><td class="r b gain">+2,704.00</td><td>TP</td></tr><tr><td class="r">05</td><td class="opt">08-03 04:01</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4065.59</td><td class="r opt">4061.90</td><td class="r gain">+3.69</td><td class="r b gain">+369.00</td><td>MANUAL</td></tr><tr><td class="r">06</td><td class="opt">08-03 05:49</td><td>XAUUSD</td><td>BUY 0.50</td><td>V7</td><td class="r opt">4060.49</td><td class="r opt">4063.35</td><td class="r gain">+2.86</td><td class="r b gain">+143.00</td><td>TP</td></tr><tr><td class="r">07</td><td class="opt">08-03 07:21</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4061.34</td><td class="r opt">4070.30</td><td class="r loss">-8.96</td><td class="r b loss">-448.25</td><td>MANUAL</td></tr><tr><td class="r">08</td><td class="opt">08-03 08:04</td><td>XAUUSD</td><td>BUY 0.50</td><td>人手</td><td class="r opt">4070.90</td><td class="r opt">4062.40</td><td class="r loss">-8.50</td><td class="r b loss">-425.00</td><td>SL</td></tr><tr><td class="r">09</td><td class="opt">08-03 09:57</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4067.70</td><td class="r opt">4066.24</td><td class="r gain">+1.46</td><td class="r b gain">+73.00</td><td>MANUAL</td></tr><tr><td class="r">10</td><td class="opt">08-03 10:17</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4063.58</td><td class="r opt">4055.27</td><td class="r gain">+8.31</td><td class="r b gain">+415.50</td><td>TP</td></tr><tr><td class="r">11</td><td class="opt">08-03 13:32</td><td>XAUUSD</td><td>BUY 0.50</td><td>V7</td><td class="r opt">4056.00</td><td class="r opt">4051.71</td><td class="r loss">-4.29</td><td class="r b loss">-214.50</td><td>MANUAL</td></tr><tr><td class="r">12</td><td class="opt">08-03 16:15</td><td>NAS100</td><td>BUY 0.50</td><td>V7</td><td class="r opt">28459.00</td><td class="r opt">28466.25</td><td class="r gain">+7.25</td><td class="r b gain">+363.00</td><td>MANUAL</td></tr><tr><td class="r">13</td><td class="opt">08-03 16:30</td><td>NAS100</td><td>SELL 0.50</td><td>V7</td><td class="r opt">28444.88</td><td class="r opt">28393.38</td><td class="r gain">+51.50</td><td class="r b gain">+2,575.00</td><td>MANUAL</td></tr><tr><td class="r">14</td><td class="opt">08-03 16:36</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4053.55</td><td class="r opt">4027.01</td><td class="r gain">+26.54</td><td class="r b gain">+1,327.00</td><td>MANUAL</td></tr><tr><td class="r">15</td><td class="opt">08-03 16:36</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4037.60</td><td class="r opt">4026.89</td><td class="r gain">+10.71</td><td class="r b gain">+321.30</td><td>TP</td></tr><tr><td class="r">16</td><td class="opt">08-03 21:55</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4032.15</td><td class="r opt">4045.14</td><td class="r loss">-12.99</td><td class="r b loss">-649.50</td><td>SL</td></tr><tr><td class="r">17</td><td class="opt">08-03 21:55</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4036.01</td><td class="r opt">4045.17</td><td class="r loss">-9.16</td><td class="r b loss">-274.80</td><td>SL</td></tr><tr><td class="r">18</td><td class="opt">08-03 21:55</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4031.96</td><td class="r opt">4045.17</td><td class="r loss">-13.21</td><td class="r b loss">-396.30</td><td>SL</td></tr><tr><td class="r">19</td><td class="opt">08-04 04:13</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4057.10</td><td class="r opt">4048.35</td><td class="r gain">+8.75</td><td class="r b gain">+437.50</td><td>MANUAL</td></tr><tr><td class="r">20</td><td class="opt">08-04 04:13</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4057.93</td><td class="r opt">4048.46</td><td class="r gain">+9.47</td><td class="r b gain">+284.10</td><td>MANUAL</td></tr><tr><td class="r">21</td><td class="opt">08-04 05:05</td><td>XAUUSD</td><td>BUY 0.30</td><td>V7</td><td class="r opt">4050.02</td><td class="r opt">4056.78</td><td class="r gain">+6.76</td><td class="r b gain">+202.80</td><td>MANUAL</td></tr></tbody>
       </table>
     </div>
   </div>
@@ -280,7 +283,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#475180057</span>
   </div>
-  <div class="rpnl num loss">-5.40</div>
+  <div class="rpnl num loss">-540.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4109.63</span><span class="to">→</span>
@@ -299,7 +302,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#475205410</span>
   </div>
-  <div class="rpnl num gain">+26.52</div>
+  <div class="rpnl num gain">+2,652.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4110.67</span><span class="to">→</span>
@@ -318,7 +321,7 @@ td.b{font-weight:650}
     <span class="tag manual">人手判斷</span>
     <span class="tk num">#476423106</span>
   </div>
-  <div class="rpnl num gain">+18.42</div>
+  <div class="rpnl num gain">+1,842.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4078.05</span><span class="to">→</span>
@@ -337,7 +340,7 @@ td.b{font-weight:650}
     <span class="tag manual">人手判斷</span>
     <span class="tk num">#477255165</span>
   </div>
-  <div class="rpnl num gain">+27.04</div>
+  <div class="rpnl num gain">+2,704.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4054.10</span><span class="to">→</span>
@@ -356,7 +359,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#478708031</span>
   </div>
-  <div class="rpnl num gain">+3.69</div>
+  <div class="rpnl num gain">+369.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4065.59</span><span class="to">→</span>
@@ -375,7 +378,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#479388973</span>
   </div>
-  <div class="rpnl num gain">+1.43</div>
+  <div class="rpnl num gain">+143.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4060.49</span><span class="to">→</span>
@@ -394,7 +397,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#479745669</span>
   </div>
-  <div class="rpnl num loss">-4.48</div>
+  <div class="rpnl num loss">-448.25<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4061.34</span><span class="to">→</span>
@@ -413,7 +416,7 @@ td.b{font-weight:650}
     <span class="tag manual">人手判斷</span>
     <span class="tk num">#479838687</span>
   </div>
-  <div class="rpnl num loss">-4.25</div>
+  <div class="rpnl num loss">-425.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4070.90</span><span class="to">→</span>
@@ -432,7 +435,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
   </div>
-  <div class="rpnl num gain">+0.73</div>
+  <div class="rpnl num gain">+73.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4067.70</span><span class="to">→</span>
@@ -451,7 +454,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
   </div>
-  <div class="rpnl num gain">+4.16</div>
+  <div class="rpnl num gain">+415.50<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4063.58</span><span class="to">→</span>
@@ -470,7 +473,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
   </div>
-  <div class="rpnl num loss">-2.15</div>
+  <div class="rpnl num loss">-214.50<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4056.00</span><span class="to">→</span>
@@ -489,7 +492,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
   </div>
-  <div class="rpnl num gain">+3.63</div>
+  <div class="rpnl num gain">+363.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">28459.00</span><span class="to">→</span>
@@ -508,7 +511,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
   </div>
-  <div class="rpnl num gain">+25.75</div>
+  <div class="rpnl num gain">+2,575.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">28444.88</span><span class="to">→</span>
@@ -527,7 +530,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
   </div>
-  <div class="rpnl num gain">+13.27</div>
+  <div class="rpnl num gain">+1,327.00<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4053.55</span><span class="to">→</span>
@@ -546,7 +549,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#481638133</span>
   </div>
-  <div class="rpnl num gain">+3.21</div>
+  <div class="rpnl num gain">+321.30<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4037.60</span><span class="to">→</span>
@@ -565,7 +568,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
   </div>
-  <div class="rpnl num loss">-6.50</div>
+  <div class="rpnl num loss">-649.50<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4032.15</span><span class="to">→</span>
@@ -584,7 +587,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482250552</span>
   </div>
-  <div class="rpnl num loss">-2.75</div>
+  <div class="rpnl num loss">-274.80<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4036.01</span><span class="to">→</span>
@@ -603,7 +606,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482320184</span>
   </div>
-  <div class="rpnl num loss">-3.96</div>
+  <div class="rpnl num loss">-396.30<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4031.96</span><span class="to">→</span>
@@ -622,7 +625,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482753491</span>
   </div>
-  <div class="rpnl num gain">+4.38</div>
+  <div class="rpnl num gain">+437.50<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4057.10</span><span class="to">→</span>
@@ -641,7 +644,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482730493</span>
   </div>
-  <div class="rpnl num gain">+2.84</div>
+  <div class="rpnl num gain">+284.10<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4057.93</span><span class="to">→</span>
@@ -660,7 +663,7 @@ td.b{font-weight:650}
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482922262</span>
   </div>
-  <div class="rpnl num gain">+2.03</div>
+  <div class="rpnl num gain">+202.80<span class="cur"> USC</span></div>
 </div>
 <div class="rprice">
   <span class="p num">4050.02</span><span class="to">→</span>
@@ -677,7 +680,7 @@ td.b{font-weight:650}
   <div class="foot">
     起始 $500.00 · Swap 等調整 <span class="num">+0.27</span> ·
     截圖為 MetaTrader 5 實際成交紀錄，撳圖可放大<br>
-    生成於 2026-08-04 12:42
+    生成於 2026-08-04 12:44
   </div>
 </div>
 
