@@ -75,6 +75,11 @@ body{
 .box table{min-width:900px}
 .box td,.box th{white-space:nowrap}
 .cur{font-size:11px;opacity:.55;margin-left:3px}
+/* SVG 用真實 px 闊度出，唔可以俾佢縮返細，否則又變返「硬塞一個畫面」 */
+.box svg{display:block; max-width:none; flex:0 0 auto}
+/* 提示可以右推 —— W 之前唔知推得，因為完全冇視覺線索 */
+.hint{font-size:10.5px; font-weight:400; color:var(--ink-3); margin-left:9px;
+      letter-spacing:.04em}
 svg{display:block; width:100%; height:auto}
 .grid{stroke:var(--rule)} .axis{fill:var(--ink-3); font-size:10.5px;
   font-family:ui-monospace,Menlo,monospace}
@@ -222,102 +227,102 @@ td.dim{color:var(--ink-3)}
   </div>
 
   <div class="card">
-    <h2>每單盈虧 · 美元</h2>
+    <h2>每單盈虧 · USC<span class="hint">← 向右推睇更多 →</span></h2>
     <div class="box">
-      <svg viewBox="0 0 720 200" width="100%" height="200" role="img"
-           aria-label="每單盈虧條形圖">
-        <line class="zero" x1="54" y1="93.0" x2="706" y2="93.0"/>
-        <g class="barg"><title>第 1 單 · SL
+      <svg viewBox="0 0 2138 200" width="2138" height="200" role="img"
+           aria-label="每單盈虧條形圖（可向右推）">
+        <line class="zero" x1="54" y1="93.0" x2="2124" y2="93.0"/>
+        <g class="barg"><title>第 01 單 · XAUUSD SELL 1.00 · SL
 4109.63 → 4115.03（-5.40 點）
--5.40 美元</title><rect class="bar loss" x="57.9" y="93.0" width="6.7" height="10.7" rx="3"/><text class="blab loss" x="61.2" y="122.7" text-anchor="middle">-5.40</text><text class="axis" x="61.2" y="188" text-anchor="middle">01</text></g><g class="barg"><title>第 2 單 · TP
+-540.00 USC</title><rect class="bar loss" x="66.4" y="93.0" width="21.2" height="10.7" rx="3"/><text class="blab loss" x="77.0" y="122.7" text-anchor="middle">-540</text><text class="axis" x="77.0" y="188" text-anchor="middle">01</text></g><g class="barg"><title>第 02 單 · XAUUSD SELL 1.00 · TP
 4110.67 → 4084.15（+26.52 點）
-+26.52 美元</title><rect class="bar gain" x="72.4" y="40.4" width="6.7" height="52.6" rx="3"/><text class="blab gain" x="75.7" y="32.4" text-anchor="middle">+26.52</text><text class="axis" x="75.7" y="188" text-anchor="middle">02</text></g><g class="barg"><title>第 3 單 · SL_PROFIT
++2,652.00 USC</title><rect class="bar gain" x="112.4" y="40.4" width="21.2" height="52.6" rx="3"/><text class="blab gain" x="123.0" y="32.4" text-anchor="middle">+2,652</text><text class="axis" x="123.0" y="188" text-anchor="middle">02</text></g><g class="barg"><title>第 03 單 · XAUUSD SELL 1.00 · SL_PROFIT
 4078.05 → 4059.63（+18.42 點）
-+18.42 美元</title><rect class="bar gain" x="86.9" y="56.5" width="6.7" height="36.5" rx="3"/><text class="blab gain" x="90.2" y="48.5" text-anchor="middle">+18.42</text><text class="axis" x="90.2" y="188" text-anchor="middle">03</text></g><g class="barg"><title>第 4 單 · TP
++1,842.00 USC</title><rect class="bar gain" x="158.4" y="56.5" width="21.2" height="36.5" rx="3"/><text class="blab gain" x="169.0" y="48.5" text-anchor="middle">+1,842</text><text class="axis" x="169.0" y="188" text-anchor="middle">03</text></g><g class="barg"><title>第 04 單 · XAUUSD SELL 1.00 · TP
 4054.10 → 4027.06（+27.04 點）
-+27.04 美元</title><rect class="bar gain" x="101.4" y="39.4" width="6.7" height="53.6" rx="3"/><text class="blab gain" x="104.7" y="31.4" text-anchor="middle">+27.04</text><text class="axis" x="104.7" y="188" text-anchor="middle">04</text></g><g class="barg"><title>第 5 單 · MANUAL
++2,704.00 USC</title><rect class="bar gain" x="204.4" y="39.4" width="21.2" height="53.6" rx="3"/><text class="blab gain" x="215.0" y="31.4" text-anchor="middle">+2,704</text><text class="axis" x="215.0" y="188" text-anchor="middle">04</text></g><g class="barg"><title>第 05 單 · XAUUSD SELL 1.00 · MANUAL
 4065.59 → 4061.90（+3.69 點）
-+3.69 美元</title><rect class="bar gain" x="115.9" y="85.7" width="6.7" height="7.3" rx="3"/><text class="blab gain" x="119.2" y="77.7" text-anchor="middle">+3.69</text><text class="axis" x="119.2" y="188" text-anchor="middle">05</text></g><g class="barg"><title>第 6 單 · TP
++369.00 USC</title><rect class="bar gain" x="250.4" y="85.7" width="21.2" height="7.3" rx="3"/><text class="blab gain" x="261.0" y="77.7" text-anchor="middle">+369</text><text class="axis" x="261.0" y="188" text-anchor="middle">05</text></g><g class="barg"><title>第 06 單 · XAUUSD BUY 0.50 · TP
 4060.49 → 4063.35（+2.86 點）
-+1.43 美元</title><rect class="bar gain" x="130.4" y="90.2" width="6.7" height="2.8" rx="3"/><text class="blab gain" x="133.7" y="82.2" text-anchor="middle">+1.43</text><text class="axis" x="133.7" y="188" text-anchor="middle">06</text></g><g class="barg"><title>第 7 單 · MANUAL
++143.00 USC</title><rect class="bar gain" x="296.4" y="90.2" width="21.2" height="2.8" rx="3"/><text class="blab gain" x="307.0" y="82.2" text-anchor="middle">+143</text><text class="axis" x="307.0" y="188" text-anchor="middle">06</text></g><g class="barg"><title>第 07 單 · XAUUSD SELL 0.50 · MANUAL
 4061.34 → 4070.30（-8.96 點）
--4.48 美元</title><rect class="bar loss" x="144.8" y="93.0" width="6.7" height="8.9" rx="3"/><text class="blab loss" x="148.2" y="120.9" text-anchor="middle">-4.48</text><text class="axis" x="148.2" y="188" text-anchor="middle">07</text></g><g class="barg"><title>第 8 單 · SL
+-448.25 USC</title><rect class="bar loss" x="342.4" y="93.0" width="21.2" height="8.9" rx="3"/><text class="blab loss" x="353.0" y="120.9" text-anchor="middle">-448</text><text class="axis" x="353.0" y="188" text-anchor="middle">07</text></g><g class="barg"><title>第 08 單 · XAUUSD BUY 0.50 · SL
 4070.90 → 4062.40（-8.50 點）
--4.25 美元</title><rect class="bar loss" x="159.3" y="93.0" width="6.7" height="8.4" rx="3"/><text class="blab loss" x="162.7" y="120.4" text-anchor="middle">-4.25</text><text class="axis" x="162.7" y="188" text-anchor="middle">08</text></g><g class="barg"><title>第 9 單 · MANUAL
+-425.00 USC</title><rect class="bar loss" x="388.4" y="93.0" width="21.2" height="8.4" rx="3"/><text class="blab loss" x="399.0" y="120.4" text-anchor="middle">-425</text><text class="axis" x="399.0" y="188" text-anchor="middle">08</text></g><g class="barg"><title>第 09 單 · XAUUSD SELL 0.50 · MANUAL
 4067.70 → 4066.24（+1.46 點）
-+0.73 美元</title><rect class="bar gain" x="173.8" y="91.6" width="6.7" height="2.0" rx="3"/><text class="blab gain" x="177.2" y="83.6" text-anchor="middle">+0.73</text><text class="axis" x="177.2" y="188" text-anchor="middle">09</text></g><g class="barg"><title>第 10 單 · TP
++73.00 USC</title><rect class="bar gain" x="434.4" y="91.6" width="21.2" height="2.0" rx="3"/><text class="blab gain" x="445.0" y="83.6" text-anchor="middle">+73</text><text class="axis" x="445.0" y="188" text-anchor="middle">09</text></g><g class="barg"><title>第 10 單 · XAUUSD SELL 0.50 · TP
 4063.58 → 4055.27（+8.31 點）
-+4.16 美元</title><rect class="bar gain" x="188.3" y="84.8" width="6.7" height="8.2" rx="3"/><text class="blab gain" x="191.6" y="76.8" text-anchor="middle">+4.16</text><text class="axis" x="191.6" y="188" text-anchor="middle">10</text></g><g class="barg"><title>第 11 單 · MANUAL
++415.50 USC</title><rect class="bar gain" x="480.4" y="84.8" width="21.2" height="8.2" rx="3"/><text class="blab gain" x="491.0" y="76.8" text-anchor="middle">+416</text><text class="axis" x="491.0" y="188" text-anchor="middle">10</text></g><g class="barg"><title>第 11 單 · XAUUSD BUY 0.50 · MANUAL
 4056.00 → 4051.71（-4.29 點）
--2.15 美元</title><rect class="bar loss" x="202.8" y="93.0" width="6.7" height="4.3" rx="3"/><text class="blab loss" x="206.1" y="116.3" text-anchor="middle">-2.15</text><text class="axis" x="206.1" y="188" text-anchor="middle">11</text></g><g class="barg"><title>第 12 單 · MANUAL
+-214.50 USC</title><rect class="bar loss" x="526.4" y="93.0" width="21.2" height="4.3" rx="3"/><text class="blab loss" x="537.0" y="116.3" text-anchor="middle">-214</text><text class="axis" x="537.0" y="188" text-anchor="middle">11</text></g><g class="barg"><title>第 12 單 · NAS100 BUY 0.50 · MANUAL
 28459.00 → 28466.25（+7.25 點）
-+3.63 美元</title><rect class="bar gain" x="217.3" y="85.8" width="6.7" height="7.2" rx="3"/><text class="blab gain" x="220.6" y="77.8" text-anchor="middle">+3.63</text><text class="axis" x="220.6" y="188" text-anchor="middle">12</text></g><g class="barg"><title>第 13 單 · MANUAL
++363.00 USC</title><rect class="bar gain" x="572.4" y="85.8" width="21.2" height="7.2" rx="3"/><text class="blab gain" x="583.0" y="77.8" text-anchor="middle">+363</text><text class="axis" x="583.0" y="188" text-anchor="middle">12</text></g><g class="barg"><title>第 13 單 · NAS100 SELL 0.50 · MANUAL
 28444.88 → 28393.38（+51.50 點）
-+25.75 美元</title><rect class="bar gain" x="231.8" y="42.0" width="6.7" height="51.0" rx="3"/><text class="blab gain" x="235.1" y="34.0" text-anchor="middle">+25.75</text><text class="axis" x="235.1" y="188" text-anchor="middle">13</text></g><g class="barg"><title>第 14 單 · MANUAL
++2,575.00 USC</title><rect class="bar gain" x="618.4" y="42.0" width="21.2" height="51.0" rx="3"/><text class="blab gain" x="629.0" y="34.0" text-anchor="middle">+2,575</text><text class="axis" x="629.0" y="188" text-anchor="middle">13</text></g><g class="barg"><title>第 14 單 · XAUUSD SELL 0.50 · MANUAL
 4053.55 → 4027.01（+26.54 點）
-+13.27 美元</title><rect class="bar gain" x="246.3" y="66.7" width="6.7" height="26.3" rx="3"/><text class="blab gain" x="249.6" y="58.7" text-anchor="middle">+13.27</text><text class="axis" x="249.6" y="188" text-anchor="middle">14</text></g><g class="barg"><title>第 15 單 · TP
++1,327.00 USC</title><rect class="bar gain" x="664.4" y="66.7" width="21.2" height="26.3" rx="3"/><text class="blab gain" x="675.0" y="58.7" text-anchor="middle">+1,327</text><text class="axis" x="675.0" y="188" text-anchor="middle">14</text></g><g class="barg"><title>第 15 單 · XAUUSD SELL 0.30 · TP
 4037.60 → 4026.89（+10.71 點）
-+3.21 美元</title><rect class="bar gain" x="260.8" y="86.6" width="6.7" height="6.4" rx="3"/><text class="blab gain" x="264.1" y="78.6" text-anchor="middle">+3.21</text><text class="axis" x="264.1" y="188" text-anchor="middle">15</text></g><g class="barg"><title>第 16 單 · SL
++321.30 USC</title><rect class="bar gain" x="710.4" y="86.6" width="21.2" height="6.4" rx="3"/><text class="blab gain" x="721.0" y="78.6" text-anchor="middle">+321</text><text class="axis" x="721.0" y="188" text-anchor="middle">15</text></g><g class="barg"><title>第 16 單 · XAUUSD SELL 0.50 · SL
 4032.15 → 4045.14（-12.99 點）
--6.50 美元</title><rect class="bar loss" x="275.2" y="93.0" width="6.7" height="12.9" rx="3"/><text class="blab loss" x="278.6" y="124.9" text-anchor="middle">-6.50</text><text class="axis" x="278.6" y="188" text-anchor="middle">16</text></g><g class="barg"><title>第 17 單 · SL
+-649.50 USC</title><rect class="bar loss" x="756.4" y="93.0" width="21.2" height="12.9" rx="3"/><text class="blab loss" x="767.0" y="124.9" text-anchor="middle">-650</text><text class="axis" x="767.0" y="188" text-anchor="middle">16</text></g><g class="barg"><title>第 17 單 · XAUUSD SELL 0.30 · SL
 4036.01 → 4045.17（-9.16 點）
--2.75 美元</title><rect class="bar loss" x="289.7" y="93.0" width="6.7" height="5.4" rx="3"/><text class="blab loss" x="293.1" y="117.4" text-anchor="middle">-2.75</text><text class="axis" x="293.1" y="188" text-anchor="middle">17</text></g><g class="barg"><title>第 18 單 · SL
+-274.80 USC</title><rect class="bar loss" x="802.4" y="93.0" width="21.2" height="5.4" rx="3"/><text class="blab loss" x="813.0" y="117.4" text-anchor="middle">-275</text><text class="axis" x="813.0" y="188" text-anchor="middle">17</text></g><g class="barg"><title>第 18 單 · XAUUSD SELL 0.30 · SL
 4031.96 → 4045.17（-13.21 點）
--3.96 美元</title><rect class="bar loss" x="304.2" y="93.0" width="6.7" height="7.9" rx="3"/><text class="blab loss" x="307.6" y="119.9" text-anchor="middle">-3.96</text><text class="axis" x="307.6" y="188" text-anchor="middle">18</text></g><g class="barg"><title>第 19 單 · MANUAL
+-396.30 USC</title><rect class="bar loss" x="848.4" y="93.0" width="21.2" height="7.9" rx="3"/><text class="blab loss" x="859.0" y="119.9" text-anchor="middle">-396</text><text class="axis" x="859.0" y="188" text-anchor="middle">18</text></g><g class="barg"><title>第 19 單 · XAUUSD SELL 0.50 · MANUAL
 4057.10 → 4048.35（+8.75 點）
-+4.38 美元</title><rect class="bar gain" x="318.7" y="84.3" width="6.7" height="8.7" rx="3"/><text class="blab gain" x="322.0" y="76.3" text-anchor="middle">+4.38</text><text class="axis" x="322.0" y="188" text-anchor="middle">19</text></g><g class="barg"><title>第 20 單 · MANUAL
++437.50 USC</title><rect class="bar gain" x="894.4" y="84.3" width="21.2" height="8.7" rx="3"/><text class="blab gain" x="905.0" y="76.3" text-anchor="middle">+438</text><text class="axis" x="905.0" y="188" text-anchor="middle">19</text></g><g class="barg"><title>第 20 單 · XAUUSD SELL 0.30 · MANUAL
 4057.93 → 4048.46（+9.47 點）
-+2.84 美元</title><rect class="bar gain" x="333.2" y="87.4" width="6.7" height="5.6" rx="3"/><text class="blab gain" x="336.5" y="79.4" text-anchor="middle">+2.84</text><text class="axis" x="336.5" y="188" text-anchor="middle">20</text></g><g class="barg"><title>第 22 單 · 賺
++284.10 USC</title><rect class="bar gain" x="940.4" y="87.4" width="21.2" height="5.6" rx="3"/><text class="blab gain" x="951.0" y="79.4" text-anchor="middle">+284</text><text class="axis" x="951.0" y="188" text-anchor="middle">20</text></g><g class="barg"><title>第 21 單 · XAUUSD BUY 0.50 · 賺
 4054.31 → 4057.02（+2.71 點）
-+1.35 美元</title><rect class="bar gain" x="347.7" y="90.3" width="6.7" height="2.7" rx="3"/><text class="blab gain" x="351.0" y="82.3" text-anchor="middle">+1.35</text><text class="axis" x="351.0" y="188" text-anchor="middle">22</text></g><g class="barg"><title>第 21 單 · MANUAL
++135.50 USC</title><rect class="bar gain" x="986.4" y="90.3" width="21.2" height="2.7" rx="3"/><text class="blab gain" x="997.0" y="82.3" text-anchor="middle">+136</text><text class="axis" x="997.0" y="188" text-anchor="middle">21</text></g><g class="barg"><title>第 22 單 · XAUUSD BUY 0.30 · MANUAL
 4050.02 → 4056.78（+6.76 點）
-+2.03 美元</title><rect class="bar gain" x="362.2" y="89.0" width="6.7" height="4.0" rx="3"/><text class="blab gain" x="365.5" y="81.0" text-anchor="middle">+2.03</text><text class="axis" x="365.5" y="188" text-anchor="middle">21</text></g><g class="barg"><title>第 23 單 · 蝕
++202.80 USC</title><rect class="bar gain" x="1032.4" y="89.0" width="21.2" height="4.0" rx="3"/><text class="blab gain" x="1043.0" y="81.0" text-anchor="middle">+203</text><text class="axis" x="1043.0" y="188" text-anchor="middle">22</text></g><g class="barg"><title>第 23 單 · XAUUSD BUY 1.00 · 蝕
 4055.68 → 4055.21（-0.47 點）
--0.47 美元</title><rect class="bar loss" x="376.7" y="93.0" width="6.7" height="2.0" rx="3"/><text class="blab loss" x="380.0" y="112.9" text-anchor="middle">-0.47</text><text class="axis" x="380.0" y="188" text-anchor="middle">23</text></g><g class="barg"><title>第 24 單 · 蝕
+-47.00 USC</title><rect class="bar loss" x="1078.4" y="93.0" width="21.2" height="2.0" rx="3"/><text class="blab loss" x="1089.0" y="112.9" text-anchor="middle">-47</text><text class="axis" x="1089.0" y="188" text-anchor="middle">23</text></g><g class="barg"><title>第 24 單 · XAUUSD SELL 1.00 · 蝕
 4053.84 → 4054.07（-0.23 點）
--0.23 美元</title><rect class="bar loss" x="391.2" y="93.0" width="6.7" height="2.0" rx="3"/><text class="blab loss" x="394.5" y="112.5" text-anchor="middle">-0.23</text><text class="axis" x="394.5" y="188" text-anchor="middle">24</text></g><g class="barg"><title>第 25 單 · 賺
+-23.00 USC</title><rect class="bar loss" x="1124.4" y="93.0" width="21.2" height="2.0" rx="3"/><text class="blab loss" x="1135.0" y="112.5" text-anchor="middle">-23</text><text class="axis" x="1135.0" y="188" text-anchor="middle">24</text></g><g class="barg"><title>第 25 單 · XAUUSD BUY 1.00 · 賺
 4060.99 → 4061.81（+0.82 點）
-+0.82 美元</title><rect class="bar gain" x="405.6" y="91.4" width="6.7" height="2.0" rx="3"/><text class="blab gain" x="409.0" y="83.4" text-anchor="middle">+0.82</text><text class="axis" x="409.0" y="188" text-anchor="middle">25</text></g><g class="barg"><title>第 26 單 · 賺
++82.00 USC</title><rect class="bar gain" x="1170.4" y="91.4" width="21.2" height="2.0" rx="3"/><text class="blab gain" x="1181.0" y="83.4" text-anchor="middle">+82</text><text class="axis" x="1181.0" y="188" text-anchor="middle">25</text></g><g class="barg"><title>第 26 單 · XAUUSD BUY 1.00 · 賺
 4059.14 → 4061.81（+2.67 點）
-+2.67 美元</title><rect class="bar gain" x="420.1" y="87.7" width="6.7" height="5.3" rx="3"/><text class="blab gain" x="423.5" y="79.7" text-anchor="middle">+2.67</text><text class="axis" x="423.5" y="188" text-anchor="middle">26</text></g><g class="barg"><title>第 27 單 · 賺
++267.00 USC</title><rect class="bar gain" x="1216.4" y="87.7" width="21.2" height="5.3" rx="3"/><text class="blab gain" x="1227.0" y="79.7" text-anchor="middle">+267</text><text class="axis" x="1227.0" y="188" text-anchor="middle">26</text></g><g class="barg"><title>第 27 單 · XAUUSD BUY 1.00 · 賺
 4060.97 → 4062.03（+1.06 點）
-+1.06 美元</title><rect class="bar gain" x="434.6" y="90.9" width="6.7" height="2.1" rx="3"/><text class="blab gain" x="438.0" y="82.9" text-anchor="middle">+1.06</text><text class="axis" x="438.0" y="188" text-anchor="middle">27</text></g><g class="barg"><title>第 28 單 · 賺
++106.00 USC</title><rect class="bar gain" x="1262.4" y="90.9" width="21.2" height="2.1" rx="3"/><text class="blab gain" x="1273.0" y="82.9" text-anchor="middle">+106</text><text class="axis" x="1273.0" y="188" text-anchor="middle">27</text></g><g class="barg"><title>第 28 單 · XAUUSD BUY 1.00 · 賺
 4062.53 → 4067.74（+5.21 點）
-+5.21 美元</title><rect class="bar gain" x="449.1" y="82.7" width="6.7" height="10.3" rx="3"/><text class="blab gain" x="452.4" y="74.7" text-anchor="middle">+5.21</text><text class="axis" x="452.4" y="188" text-anchor="middle">28</text></g><g class="barg"><title>第 29 單 · 賺
++521.00 USC</title><rect class="bar gain" x="1308.4" y="82.7" width="21.2" height="10.3" rx="3"/><text class="blab gain" x="1319.0" y="74.7" text-anchor="middle">+521</text><text class="axis" x="1319.0" y="188" text-anchor="middle">28</text></g><g class="barg"><title>第 29 單 · XAUUSD BUY 1.00 · 賺
 4058.79 → 4069.52（+10.73 點）
-+10.73 美元</title><rect class="bar gain" x="463.6" y="71.7" width="6.7" height="21.3" rx="3"/><text class="blab gain" x="466.9" y="63.7" text-anchor="middle">+10.73</text><text class="axis" x="466.9" y="188" text-anchor="middle">29</text></g><g class="barg"><title>第 30 單 · 賺
++1,073.00 USC</title><rect class="bar gain" x="1354.4" y="71.7" width="21.2" height="21.3" rx="3"/><text class="blab gain" x="1365.0" y="63.7" text-anchor="middle">+1,073</text><text class="axis" x="1365.0" y="188" text-anchor="middle">29</text></g><g class="barg"><title>第 30 單 · XAUUSD BUY 1.00 · 賺
 4048.64 → 4070.15（+21.51 點）
-+21.51 美元</title><rect class="bar gain" x="478.1" y="50.4" width="6.7" height="42.6" rx="3"/><text class="blab gain" x="481.4" y="42.4" text-anchor="middle">+21.51</text><text class="axis" x="481.4" y="188" text-anchor="middle">30</text></g><g class="barg"><title>第 31 單 · 賺
++2,151.00 USC</title><rect class="bar gain" x="1400.4" y="50.4" width="21.2" height="42.6" rx="3"/><text class="blab gain" x="1411.0" y="42.4" text-anchor="middle">+2,151</text><text class="axis" x="1411.0" y="188" text-anchor="middle">30</text></g><g class="barg"><title>第 31 單 · XAUUSD BUY 1.00 · 賺
 4049.98 → 4070.06（+20.08 點）
-+20.08 美元</title><rect class="bar gain" x="492.6" y="53.2" width="6.7" height="39.8" rx="3"/><text class="blab gain" x="495.9" y="45.2" text-anchor="middle">+20.08</text><text class="axis" x="495.9" y="188" text-anchor="middle">31</text></g><g class="barg"><title>第 32 單 · 賺
++2,008.00 USC</title><rect class="bar gain" x="1446.4" y="53.2" width="21.2" height="39.8" rx="3"/><text class="blab gain" x="1457.0" y="45.2" text-anchor="middle">+2,008</text><text class="axis" x="1457.0" y="188" text-anchor="middle">31</text></g><g class="barg"><title>第 32 單 · XAUUSD SELL 1.00 · 賺
 4078.46 → 4075.69（+2.77 點）
-+2.77 美元</title><rect class="bar gain" x="507.1" y="87.5" width="6.7" height="5.5" rx="3"/><text class="blab gain" x="510.4" y="79.5" text-anchor="middle">+2.77</text><text class="axis" x="510.4" y="188" text-anchor="middle">32</text></g><g class="barg"><title>第 33 單 · 賺
++277.00 USC</title><rect class="bar gain" x="1492.4" y="87.5" width="21.2" height="5.5" rx="3"/><text class="blab gain" x="1503.0" y="79.5" text-anchor="middle">+277</text><text class="axis" x="1503.0" y="188" text-anchor="middle">32</text></g><g class="barg"><title>第 33 單 · XAUUSD SELL 1.00 · 賺
 4072.86 → 4064.43（+8.43 點）
-+8.43 美元</title><rect class="bar gain" x="521.6" y="76.3" width="6.7" height="16.7" rx="3"/><text class="blab gain" x="524.9" y="68.3" text-anchor="middle">+8.43</text><text class="axis" x="524.9" y="188" text-anchor="middle">33</text></g><g class="barg"><title>第 34 單 · 蝕
++843.00 USC</title><rect class="bar gain" x="1538.4" y="76.3" width="21.2" height="16.7" rx="3"/><text class="blab gain" x="1549.0" y="68.3" text-anchor="middle">+843</text><text class="axis" x="1549.0" y="188" text-anchor="middle">33</text></g><g class="barg"><title>第 34 單 · XAUUSD SELL 1.00 · 蝕
 4063.26 → 4065.79（-2.53 點）
--2.53 美元</title><rect class="bar loss" x="536.0" y="93.0" width="6.7" height="5.0" rx="3"/><text class="blab loss" x="539.4" y="117.0" text-anchor="middle">-2.53</text><text class="axis" x="539.4" y="188" text-anchor="middle">34</text></g><g class="barg"><title>第 35 單 · 賺
+-253.00 USC</title><rect class="bar loss" x="1584.4" y="93.0" width="21.2" height="5.0" rx="3"/><text class="blab loss" x="1595.0" y="117.0" text-anchor="middle">-253</text><text class="axis" x="1595.0" y="188" text-anchor="middle">34</text></g><g class="barg"><title>第 35 單 · XAUUSD BUY 1.00 · 賺
 4066.51 → 4087.92（+21.41 點）
-+21.41 美元</title><rect class="bar gain" x="550.5" y="50.6" width="6.7" height="42.4" rx="3"/><text class="blab gain" x="553.9" y="42.6" text-anchor="middle">+21.41</text><text class="axis" x="553.9" y="188" text-anchor="middle">35</text></g><g class="barg"><title>第 36 單 · 賺
++2,141.00 USC</title><rect class="bar gain" x="1630.4" y="50.6" width="21.2" height="42.4" rx="3"/><text class="blab gain" x="1641.0" y="42.6" text-anchor="middle">+2,141</text><text class="axis" x="1641.0" y="188" text-anchor="middle">35</text></g><g class="barg"><title>第 36 單 · XAUUSD BUY 1.00 · 賺
 4081.19 → 4089.79（+8.60 點）
-+8.60 美元</title><rect class="bar gain" x="565.0" y="76.0" width="6.7" height="17.0" rx="3"/><text class="blab gain" x="568.4" y="68.0" text-anchor="middle">+8.60</text><text class="axis" x="568.4" y="188" text-anchor="middle">36</text></g><g class="barg"><title>第 37 單 · 蝕
++860.00 USC</title><rect class="bar gain" x="1676.4" y="76.0" width="21.2" height="17.0" rx="3"/><text class="blab gain" x="1687.0" y="68.0" text-anchor="middle">+860</text><text class="axis" x="1687.0" y="188" text-anchor="middle">36</text></g><g class="barg"><title>第 37 單 · XAUUSD SELL 1.00 · 蝕
 4076.28 → 4085.00（-8.72 點）
--8.72 美元</title><rect class="bar loss" x="579.5" y="93.0" width="6.7" height="17.3" rx="3"/><text class="blab loss" x="582.8" y="129.3" text-anchor="middle">-8.72</text><text class="axis" x="582.8" y="188" text-anchor="middle">37</text></g><g class="barg"><title>第 38 單 · 賺
+-872.00 USC</title><rect class="bar loss" x="1722.4" y="93.0" width="21.2" height="17.3" rx="3"/><text class="blab loss" x="1733.0" y="129.3" text-anchor="middle">-872</text><text class="axis" x="1733.0" y="188" text-anchor="middle">37</text></g><g class="barg"><title>第 38 單 · XAUUSD BUY 1.00 · 賺
 4086.15 → 4087.73（+1.58 點）
-+1.58 美元</title><rect class="bar gain" x="594.0" y="89.9" width="6.7" height="3.1" rx="3"/><text class="blab gain" x="597.3" y="81.9" text-anchor="middle">+1.58</text><text class="axis" x="597.3" y="188" text-anchor="middle">38</text></g><g class="barg"><title>第 39 單 · 賺
++158.00 USC</title><rect class="bar gain" x="1768.4" y="89.9" width="21.2" height="3.1" rx="3"/><text class="blab gain" x="1779.0" y="81.9" text-anchor="middle">+158</text><text class="axis" x="1779.0" y="188" text-anchor="middle">38</text></g><g class="barg"><title>第 39 單 · XAUUSD SELL 1.00 · 賺
 4086.27 → 4083.90（+2.37 點）
-+2.37 美元</title><rect class="bar gain" x="608.5" y="88.3" width="6.7" height="4.7" rx="3"/><text class="blab gain" x="611.8" y="80.3" text-anchor="middle">+2.37</text><text class="axis" x="611.8" y="188" text-anchor="middle">39</text></g><g class="barg"><title>第 40 單 · 蝕
++237.00 USC</title><rect class="bar gain" x="1814.4" y="88.3" width="21.2" height="4.7" rx="3"/><text class="blab gain" x="1825.0" y="80.3" text-anchor="middle">+237</text><text class="axis" x="1825.0" y="188" text-anchor="middle">39</text></g><g class="barg"><title>第 40 單 · XAUUSD BUY 1.00 · 蝕
 4083.52 → 4074.97（-8.55 點）
--8.55 美元</title><rect class="bar loss" x="623.0" y="93.0" width="6.7" height="16.9" rx="3"/><text class="blab loss" x="626.3" y="128.9" text-anchor="middle">-8.55</text><text class="axis" x="626.3" y="188" text-anchor="middle">40</text></g><g class="barg"><title>第 41 單 · 賺
+-855.00 USC</title><rect class="bar loss" x="1860.4" y="93.0" width="21.2" height="16.9" rx="3"/><text class="blab loss" x="1871.0" y="128.9" text-anchor="middle">-855</text><text class="axis" x="1871.0" y="188" text-anchor="middle">40</text></g><g class="barg"><title>第 41 單 · XAUUSD BUY 1.00 · 賺
 4080.04 → 4082.81（+2.77 點）
-+2.77 美元</title><rect class="bar gain" x="637.5" y="87.5" width="6.7" height="5.5" rx="3"/><text class="blab gain" x="640.8" y="79.5" text-anchor="middle">+2.77</text><text class="axis" x="640.8" y="188" text-anchor="middle">41</text></g><g class="barg"><title>第 42 單 · 賺
++277.00 USC</title><rect class="bar gain" x="1906.4" y="87.5" width="21.2" height="5.5" rx="3"/><text class="blab gain" x="1917.0" y="79.5" text-anchor="middle">+277</text><text class="axis" x="1917.0" y="188" text-anchor="middle">41</text></g><g class="barg"><title>第 42 單 · XAUUSD BUY 1.00 · 賺
 4083.86 → 4085.37（+1.51 點）
-+1.51 美元</title><rect class="bar gain" x="652.0" y="90.0" width="6.7" height="3.0" rx="3"/><text class="blab gain" x="655.3" y="82.0" text-anchor="middle">+1.51</text><text class="axis" x="655.3" y="188" text-anchor="middle">42</text></g><g class="barg"><title>第 43 單 · 蝕
++151.00 USC</title><rect class="bar gain" x="1952.4" y="90.0" width="21.2" height="3.0" rx="3"/><text class="blab gain" x="1963.0" y="82.0" text-anchor="middle">+151</text><text class="axis" x="1963.0" y="188" text-anchor="middle">42</text></g><g class="barg"><title>第 43 單 · XAUUSD SELL 1.00 · 蝕
 4076.64 → 4097.51（-20.87 點）
--20.87 美元</title><rect class="bar loss" x="666.4" y="93.0" width="6.7" height="41.4" rx="3"/><text class="blab loss" x="669.8" y="153.4" text-anchor="middle">-20.87</text><text class="axis" x="669.8" y="188" text-anchor="middle">43</text></g><g class="barg"><title>第 44 單 · 蝕
+-2,087.00 USC</title><rect class="bar loss" x="1998.4" y="93.0" width="21.2" height="41.4" rx="3"/><text class="blab loss" x="2009.0" y="153.4" text-anchor="middle">-2,087</text><text class="axis" x="2009.0" y="188" text-anchor="middle">43</text></g><g class="barg"><title>第 44 單 · XAUUSD SELL 0.50 · 蝕
 4084.78 → 4097.53（-12.75 點）
--6.38 美元</title><rect class="bar loss" x="680.9" y="93.0" width="6.7" height="12.6" rx="3"/><text class="blab loss" x="684.3" y="124.6" text-anchor="middle">-6.38</text><text class="axis" x="684.3" y="188" text-anchor="middle">44</text></g><g class="barg"><title>第 45 單 · 賺
+-637.50 USC</title><rect class="bar loss" x="2044.4" y="93.0" width="21.2" height="12.6" rx="3"/><text class="blab loss" x="2055.0" y="124.6" text-anchor="middle">-638</text><text class="axis" x="2055.0" y="188" text-anchor="middle">44</text></g><g class="barg"><title>第 45 單 · XAUUSD SELL 0.50 · 賺
 4094.99 → 4087.95（+7.04 點）
-+3.52 美元</title><rect class="bar gain" x="695.4" y="86.0" width="6.7" height="7.0" rx="3"/><text class="blab gain" x="698.8" y="78.0" text-anchor="middle">+3.52</text><text class="axis" x="698.8" y="188" text-anchor="middle">45</text></g>
++352.00 USC</title><rect class="bar gain" x="2090.4" y="86.0" width="21.2" height="7.0" rx="3"/><text class="blab gain" x="2101.0" y="78.0" text-anchor="middle">+352</text><text class="axis" x="2101.0" y="188" text-anchor="middle">45</text></g>
       </svg>
     </div>
   </div>
@@ -1242,7 +1247,7 @@ td.dim{color:var(--ink-3)}
   <div class="foot">
     起始 $500.00 · Swap 等調整 <span class="num">+0.27</span> ·
     截圖為 MetaTrader 5 實際成交紀錄，撳圖可放大<br>
-    生成於 2026-08-05 02:20
+    生成於 2026-08-05 02:27
   </div>
 </div>
 
