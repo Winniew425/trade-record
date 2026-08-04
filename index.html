@@ -76,7 +76,9 @@ body{
 .box td,.box th{white-space:nowrap}
 .cur{font-size:11px;opacity:.55;margin-left:3px}
 /* SVG 用真實 px 闊度出，唔可以俾佢縮返細，否則又變返「硬塞一個畫面」 */
-.box svg{display:block; max-width:none; flex:0 0 auto}
+.box svg{display:block}
+.box .bar-svg{width:auto; max-width:none; flex:0 0 auto}
+.box .eq-svg{width:100%}
 /* 提示可以右推 —— W 之前唔知推得，因為完全冇視覺線索 */
 .hint{font-size:10.5px; font-weight:400; color:var(--ink-3); margin-left:9px;
       letter-spacing:.04em}
@@ -230,8 +232,9 @@ td.dim{color:var(--ink-3)}
   <div class="card">
     <h2>每單盈虧 · USC<span class="hint">← 向右推睇更多 →</span></h2>
     <div class="box">
-      <svg viewBox="0 0 2138 200" width="2138" height="200" role="img"
-           aria-label="每單盈虧條形圖（可向右推）">
+      <svg class="bar-svg" viewBox="0 0 2138 200" width="2138" height="200"
+           style="width:2138px;min-width:2138px;max-width:none;flex:0 0 auto"
+           role="img" aria-label="每單盈虧條形圖（可向右推）">
         <line class="zero" x1="54" y1="93.0" x2="2124" y2="93.0"/>
         <g class="barg"><title>第 01 單 · XAUUSD SELL 1.00 · SL
 4109.63 → 4115.03（-5.40 點）
@@ -1248,7 +1251,7 @@ td.dim{color:var(--ink-3)}
   <div class="foot">
     起始 $500.00 · Swap 等調整 <span class="num">+0.27</span> ·
     截圖為 MetaTrader 5 實際成交紀錄，撳圖可放大<br>
-    生成於 2026-08-05 02:28
+    生成於 2026-08-05 02:35
   </div>
 </div>
 
