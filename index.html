@@ -112,14 +112,24 @@ td.b{font-weight:650}
 .row:first-of-type{padding-top:0}
 .row:last-of-type{border-bottom:none; padding-bottom:2px}
 .rtop{display:flex; justify-content:space-between; align-items:baseline; gap:16px}
-.rid{display:flex; align-items:baseline; gap:9px; flex-wrap:wrap}
+.rid{display:flex; align-items:baseline; gap:9px; flex-wrap:nowrap;
+     overflow-x:auto; min-width:0; -webkit-overflow-scrolling:touch;
+     scrollbar-width:none; white-space:nowrap}
+.rid::-webkit-scrollbar{display:none}
+.dir{font-size:10.5px; font-weight:700; letter-spacing:.06em; padding:2px 7px;
+     border-radius:4px; white-space:nowrap}
+.dir.buy{background:rgba(23,138,90,.13); color:var(--gain)}
+.dir.sell{background:rgba(199,58,58,.13); color:var(--loss)}
 .rn{font-size:12px; color:var(--ink-3); font-weight:600}
 .tag{font-size:10px; text-transform:uppercase; letter-spacing:.08em;
   padding:2px 7px; border:1px solid var(--rule-hi); color:var(--ink-2)}
 .tag.manual{border-color:var(--brass); color:var(--brass)}
 .tk{font-size:11px; color:var(--ink-3)}
 .rpnl{font-size:24px; font-weight:650; white-space:nowrap}
-.rprice{margin-top:11px; display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.rprice{margin-top:11px; display:flex; align-items:baseline; gap:10px;
+        flex-wrap:nowrap; overflow-x:auto; white-space:nowrap;
+        -webkit-overflow-scrolling:touch; scrollbar-width:none}
+.rprice::-webkit-scrollbar{display:none}
 .rprice .p{font-size:18px; font-weight:500}
 .rprice .to{color:var(--ink-3); font-size:14px}
 .rprice .pt{font-size:13px; font-weight:600}
@@ -127,8 +137,12 @@ td.b{font-weight:650}
   padding:2px 7px; margin-left:2px}
 .res.gain{background:var(--gain); color:#fff}
 .res.loss{background:var(--loss); color:#fff}
-.rmeta{margin-top:11px; display:flex; gap:20px; flex-wrap:wrap;
-  font-size:11.5px; color:var(--ink-3)}
+.rmeta{margin-top:11px; display:flex; gap:20px; flex-wrap:nowrap;
+  overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none; font-size:11.5px; color:var(--ink-3)}
+.rmeta::-webkit-scrollbar{display:none}
+.rmeta span{flex:0 0 auto}
+td.dim{color:var(--ink-3)}
 .rmeta b{color:var(--ink-2); font-weight:600}
 .rnote{margin-top:12px; font-size:13.5px; line-height:1.62; color:var(--ink-2);
   max-width:62ch}
@@ -312,11 +326,10 @@ td.b{font-weight:650}
     <h2>一覽表</h2>
     <div class="box">
       <table>
-        <thead><tr><th class="r">#</th><th class="opt">平倉</th><th>品種</th><th>方向</th><th>來源</th>
-          <th class="r opt">入市</th><th class="r opt">出場</th>
-          <th class="r">點數</th><th class="r">盈虧 USC</th>
-          <th>結果</th></tr></thead>
-        <tbody><tr><td class="r">01</td><td class="opt">07-30 23:16</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4109.63</td><td class="r opt">4115.03</td><td class="r loss">-5.40</td><td class="r b loss">-540.00</td><td>SL</td></tr><tr><td class="r">02</td><td class="opt">07-31 04:39</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4110.67</td><td class="r opt">4084.15</td><td class="r gain">+26.52</td><td class="r b gain">+2,652.00</td><td>TP</td></tr><tr><td class="r">03</td><td class="opt">07-31 14:11</td><td>XAUUSD</td><td>SELL 1.00</td><td>人手</td><td class="r opt">4078.05</td><td class="r opt">4059.63</td><td class="r gain">+18.42</td><td class="r b gain">+1,842.00</td><td>SL_PROFIT</td></tr><tr><td class="r">04</td><td class="opt">07-31 16:40</td><td>XAUUSD</td><td>SELL 1.00</td><td>人手</td><td class="r opt">4054.10</td><td class="r opt">4027.06</td><td class="r gain">+27.04</td><td class="r b gain">+2,704.00</td><td>TP</td></tr><tr><td class="r">05</td><td class="opt">08-03 04:01</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4065.59</td><td class="r opt">4061.90</td><td class="r gain">+3.69</td><td class="r b gain">+369.00</td><td>MANUAL</td></tr><tr><td class="r">06</td><td class="opt">08-03 05:49</td><td>XAUUSD</td><td>BUY 0.50</td><td>V7</td><td class="r opt">4060.49</td><td class="r opt">4063.35</td><td class="r gain">+2.86</td><td class="r b gain">+143.00</td><td>TP</td></tr><tr><td class="r">07</td><td class="opt">08-03 07:21</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4061.34</td><td class="r opt">4070.30</td><td class="r loss">-8.96</td><td class="r b loss">-448.25</td><td>MANUAL</td></tr><tr><td class="r">08</td><td class="opt">08-03 08:04</td><td>XAUUSD</td><td>BUY 0.50</td><td>人手</td><td class="r opt">4070.90</td><td class="r opt">4062.40</td><td class="r loss">-8.50</td><td class="r b loss">-425.00</td><td>SL</td></tr><tr><td class="r">09</td><td class="opt">08-03 09:57</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4067.70</td><td class="r opt">4066.24</td><td class="r gain">+1.46</td><td class="r b gain">+73.00</td><td>MANUAL</td></tr><tr><td class="r">10</td><td class="opt">08-03 10:17</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4063.58</td><td class="r opt">4055.27</td><td class="r gain">+8.31</td><td class="r b gain">+415.50</td><td>TP</td></tr><tr><td class="r">11</td><td class="opt">08-03 13:32</td><td>XAUUSD</td><td>BUY 0.50</td><td>V7</td><td class="r opt">4056.00</td><td class="r opt">4051.71</td><td class="r loss">-4.29</td><td class="r b loss">-214.50</td><td>MANUAL</td></tr><tr><td class="r">12</td><td class="opt">08-03 16:15</td><td>NAS100</td><td>BUY 0.50</td><td>V7</td><td class="r opt">28459.00</td><td class="r opt">28466.25</td><td class="r gain">+7.25</td><td class="r b gain">+363.00</td><td>MANUAL</td></tr><tr><td class="r">13</td><td class="opt">08-03 16:30</td><td>NAS100</td><td>SELL 0.50</td><td>V7</td><td class="r opt">28444.88</td><td class="r opt">28393.38</td><td class="r gain">+51.50</td><td class="r b gain">+2,575.00</td><td>MANUAL</td></tr><tr><td class="r">14</td><td class="opt">08-03 16:36</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4053.55</td><td class="r opt">4027.01</td><td class="r gain">+26.54</td><td class="r b gain">+1,327.00</td><td>MANUAL</td></tr><tr><td class="r">15</td><td class="opt">08-03 16:36</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4037.60</td><td class="r opt">4026.89</td><td class="r gain">+10.71</td><td class="r b gain">+321.30</td><td>TP</td></tr><tr><td class="r">16</td><td class="opt">08-03 21:55</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4032.15</td><td class="r opt">4045.14</td><td class="r loss">-12.99</td><td class="r b loss">-649.50</td><td>SL</td></tr><tr><td class="r">17</td><td class="opt">08-03 21:55</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4036.01</td><td class="r opt">4045.17</td><td class="r loss">-9.16</td><td class="r b loss">-274.80</td><td>SL</td></tr><tr><td class="r">18</td><td class="opt">08-03 21:55</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4031.96</td><td class="r opt">4045.17</td><td class="r loss">-13.21</td><td class="r b loss">-396.30</td><td>SL</td></tr><tr><td class="r">19</td><td class="opt">08-04 04:13</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4057.10</td><td class="r opt">4048.35</td><td class="r gain">+8.75</td><td class="r b gain">+437.50</td><td>MANUAL</td></tr><tr><td class="r">20</td><td class="opt">08-04 04:13</td><td>XAUUSD</td><td>SELL 0.30</td><td>V7</td><td class="r opt">4057.93</td><td class="r opt">4048.46</td><td class="r gain">+9.47</td><td class="r b gain">+284.10</td><td>MANUAL</td></tr><tr><td class="r">21</td><td class="opt">08-04 05:00</td><td>XAUUSD</td><td>BUY 0.50</td><td>V7</td><td class="r opt">4054.31</td><td class="r opt">4057.02</td><td class="r gain">+2.71</td><td class="r b gain">+135.50</td><td>賺</td></tr><tr><td class="r">22</td><td class="opt">08-04 05:05</td><td>XAUUSD</td><td>BUY 0.30</td><td>V7</td><td class="r opt">4050.02</td><td class="r opt">4056.78</td><td class="r gain">+6.76</td><td class="r b gain">+202.80</td><td>MANUAL</td></tr><tr><td class="r">23</td><td class="opt">08-04 06:41</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4055.68</td><td class="r opt">4055.21</td><td class="r loss">-0.47</td><td class="r b loss">-47.00</td><td>蝕</td></tr><tr><td class="r">24</td><td class="opt">08-04 06:49</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4053.84</td><td class="r opt">4054.07</td><td class="r loss">-0.23</td><td class="r b loss">-23.00</td><td>蝕</td></tr><tr><td class="r">25</td><td class="opt">08-04 08:34</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4060.99</td><td class="r opt">4061.81</td><td class="r gain">+0.82</td><td class="r b gain">+82.00</td><td>賺</td></tr><tr><td class="r">26</td><td class="opt">08-04 08:34</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4059.14</td><td class="r opt">4061.81</td><td class="r gain">+2.67</td><td class="r b gain">+267.00</td><td>賺</td></tr><tr><td class="r">27</td><td class="opt">08-04 08:36</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4060.97</td><td class="r opt">4062.03</td><td class="r gain">+1.06</td><td class="r b gain">+106.00</td><td>賺</td></tr><tr><td class="r">28</td><td class="opt">08-04 11:02</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4062.53</td><td class="r opt">4067.74</td><td class="r gain">+5.21</td><td class="r b gain">+521.00</td><td>賺</td></tr><tr><td class="r">29</td><td class="opt">08-04 11:03</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4058.79</td><td class="r opt">4069.52</td><td class="r gain">+10.73</td><td class="r b gain">+1,073.00</td><td>賺</td></tr><tr><td class="r">30</td><td class="opt">08-04 14:44</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4048.64</td><td class="r opt">4070.15</td><td class="r gain">+21.51</td><td class="r b gain">+2,151.00</td><td>賺</td></tr><tr><td class="r">31</td><td class="opt">08-04 14:44</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4049.98</td><td class="r opt">4070.06</td><td class="r gain">+20.08</td><td class="r b gain">+2,008.00</td><td>賺</td></tr><tr><td class="r">32</td><td class="opt">08-04 15:56</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4078.46</td><td class="r opt">4075.69</td><td class="r gain">+2.77</td><td class="r b gain">+277.00</td><td>賺</td></tr><tr><td class="r">33</td><td class="opt">08-04 16:07</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4072.86</td><td class="r opt">4064.43</td><td class="r gain">+8.43</td><td class="r b gain">+843.00</td><td>賺</td></tr><tr><td class="r">34</td><td class="opt">08-04 16:07</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4063.26</td><td class="r opt">4065.79</td><td class="r loss">-2.53</td><td class="r b loss">-253.00</td><td>蝕</td></tr><tr><td class="r">35</td><td class="opt">08-04 16:23</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4066.51</td><td class="r opt">4087.92</td><td class="r gain">+21.41</td><td class="r b gain">+2,141.00</td><td>賺</td></tr><tr><td class="r">36</td><td class="opt">08-04 16:23</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4081.19</td><td class="r opt">4089.79</td><td class="r gain">+8.60</td><td class="r b gain">+860.00</td><td>賺</td></tr><tr><td class="r">37</td><td class="opt">08-04 16:34</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4076.28</td><td class="r opt">4085.00</td><td class="r loss">-8.72</td><td class="r b loss">-872.00</td><td>蝕</td></tr><tr><td class="r">38</td><td class="opt">08-04 17:16</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4086.15</td><td class="r opt">4087.73</td><td class="r gain">+1.58</td><td class="r b gain">+158.00</td><td>賺</td></tr><tr><td class="r">39</td><td class="opt">08-04 17:26</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4086.27</td><td class="r opt">4083.90</td><td class="r gain">+2.37</td><td class="r b gain">+237.00</td><td>賺</td></tr><tr><td class="r">40</td><td class="opt">08-04 17:38</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4083.52</td><td class="r opt">4074.97</td><td class="r loss">-8.55</td><td class="r b loss">-855.00</td><td>蝕</td></tr><tr><td class="r">41</td><td class="opt">08-04 18:48</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4080.04</td><td class="r opt">4082.81</td><td class="r gain">+2.77</td><td class="r b gain">+277.00</td><td>賺</td></tr><tr><td class="r">42</td><td class="opt">08-04 19:05</td><td>XAUUSD</td><td>BUY 1.00</td><td>V7</td><td class="r opt">4083.86</td><td class="r opt">4085.37</td><td class="r gain">+1.51</td><td class="r b gain">+151.00</td><td>賺</td></tr><tr><td class="r">43</td><td class="opt">08-04 20:01</td><td>XAUUSD</td><td>SELL 1.00</td><td>V7</td><td class="r opt">4076.64</td><td class="r opt">4097.51</td><td class="r loss">-20.87</td><td class="r b loss">-2,087.00</td><td>蝕</td></tr><tr><td class="r">44</td><td class="opt">08-04 20:01</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4084.78</td><td class="r opt">4097.53</td><td class="r loss">-12.75</td><td class="r b loss">-637.50</td><td>蝕</td></tr><tr><td class="r">45</td><td class="opt">08-04 21:03</td><td>XAUUSD</td><td>SELL 0.50</td><td>V7</td><td class="r opt">4094.99</td><td class="r opt">4087.95</td><td class="r gain">+7.04</td><td class="r b gain">+352.00</td><td>賺</td></tr></tbody>
+        <thead><tr><th class="r">盈虧 USC</th><th class="r">點數</th><th>結果</th>
+          <th class="r">#</th><th>方向</th><th>品種</th><th class="opt">平倉</th>
+          <th class="r opt">入市</th><th class="r opt">出場</th><th>來源</th></tr></thead>
+        <tbody><tr><td class="r b loss">-540.00</td><td class="r loss">-5.40</td><td><span class="res loss">SL</span></td><td class="r dim">01</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">07-30 23:16</td><td class="r opt num">4109.63</td><td class="r opt num">4115.03</td><td class="dim">V7</td></tr><tr><td class="r b gain">+2,652.00</td><td class="r gain">+26.52</td><td><span class="res gain">TP</span></td><td class="r dim">02</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">07-31 04:39</td><td class="r opt num">4110.67</td><td class="r opt num">4084.15</td><td class="dim">V7</td></tr><tr><td class="r b gain">+1,842.00</td><td class="r gain">+18.42</td><td><span class="res gain">SL_PROFIT</span></td><td class="r dim">03</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">07-31 14:11</td><td class="r opt num">4078.05</td><td class="r opt num">4059.63</td><td class="dim">人手</td></tr><tr><td class="r b gain">+2,704.00</td><td class="r gain">+27.04</td><td><span class="res gain">TP</span></td><td class="r dim">04</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">07-31 16:40</td><td class="r opt num">4054.10</td><td class="r opt num">4027.06</td><td class="dim">人手</td></tr><tr><td class="r b gain">+369.00</td><td class="r gain">+3.69</td><td><span class="res gain">MANUAL</span></td><td class="r dim">05</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-03 04:01</td><td class="r opt num">4065.59</td><td class="r opt num">4061.90</td><td class="dim">V7</td></tr><tr><td class="r b gain">+143.00</td><td class="r gain">+2.86</td><td><span class="res gain">TP</span></td><td class="r dim">06</td><td><span class="dir buy">BUY</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 05:49</td><td class="r opt num">4060.49</td><td class="r opt num">4063.35</td><td class="dim">V7</td></tr><tr><td class="r b loss">-448.25</td><td class="r loss">-8.96</td><td><span class="res loss">MANUAL</span></td><td class="r dim">07</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 07:21</td><td class="r opt num">4061.34</td><td class="r opt num">4070.30</td><td class="dim">V7</td></tr><tr><td class="r b loss">-425.00</td><td class="r loss">-8.50</td><td><span class="res loss">SL</span></td><td class="r dim">08</td><td><span class="dir buy">BUY</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 08:04</td><td class="r opt num">4070.90</td><td class="r opt num">4062.40</td><td class="dim">人手</td></tr><tr><td class="r b gain">+73.00</td><td class="r gain">+1.46</td><td><span class="res gain">MANUAL</span></td><td class="r dim">09</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 09:57</td><td class="r opt num">4067.70</td><td class="r opt num">4066.24</td><td class="dim">V7</td></tr><tr><td class="r b gain">+415.50</td><td class="r gain">+8.31</td><td><span class="res gain">TP</span></td><td class="r dim">10</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 10:17</td><td class="r opt num">4063.58</td><td class="r opt num">4055.27</td><td class="dim">V7</td></tr><tr><td class="r b loss">-214.50</td><td class="r loss">-4.29</td><td><span class="res loss">MANUAL</span></td><td class="r dim">11</td><td><span class="dir buy">BUY</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 13:32</td><td class="r opt num">4056.00</td><td class="r opt num">4051.71</td><td class="dim">V7</td></tr><tr><td class="r b gain">+363.00</td><td class="r gain">+7.25</td><td><span class="res gain">MANUAL</span></td><td class="r dim">12</td><td><span class="dir buy">BUY</span> <span class="num">0.50</span></td><td>NAS100</td><td class="opt">08-03 16:15</td><td class="r opt num">28459.00</td><td class="r opt num">28466.25</td><td class="dim">V7</td></tr><tr><td class="r b gain">+2,575.00</td><td class="r gain">+51.50</td><td><span class="res gain">MANUAL</span></td><td class="r dim">13</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>NAS100</td><td class="opt">08-03 16:30</td><td class="r opt num">28444.88</td><td class="r opt num">28393.38</td><td class="dim">V7</td></tr><tr><td class="r b gain">+1,327.00</td><td class="r gain">+26.54</td><td><span class="res gain">MANUAL</span></td><td class="r dim">14</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 16:36</td><td class="r opt num">4053.55</td><td class="r opt num">4027.01</td><td class="dim">V7</td></tr><tr><td class="r b gain">+321.30</td><td class="r gain">+10.71</td><td><span class="res gain">TP</span></td><td class="r dim">15</td><td><span class="dir sell">SELL</span> <span class="num">0.30</span></td><td>XAUUSD</td><td class="opt">08-03 16:36</td><td class="r opt num">4037.60</td><td class="r opt num">4026.89</td><td class="dim">V7</td></tr><tr><td class="r b loss">-649.50</td><td class="r loss">-12.99</td><td><span class="res loss">SL</span></td><td class="r dim">16</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-03 21:55</td><td class="r opt num">4032.15</td><td class="r opt num">4045.14</td><td class="dim">V7</td></tr><tr><td class="r b loss">-274.80</td><td class="r loss">-9.16</td><td><span class="res loss">SL</span></td><td class="r dim">17</td><td><span class="dir sell">SELL</span> <span class="num">0.30</span></td><td>XAUUSD</td><td class="opt">08-03 21:55</td><td class="r opt num">4036.01</td><td class="r opt num">4045.17</td><td class="dim">V7</td></tr><tr><td class="r b loss">-396.30</td><td class="r loss">-13.21</td><td><span class="res loss">SL</span></td><td class="r dim">18</td><td><span class="dir sell">SELL</span> <span class="num">0.30</span></td><td>XAUUSD</td><td class="opt">08-03 21:55</td><td class="r opt num">4031.96</td><td class="r opt num">4045.17</td><td class="dim">V7</td></tr><tr><td class="r b gain">+437.50</td><td class="r gain">+8.75</td><td><span class="res gain">MANUAL</span></td><td class="r dim">19</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-04 04:13</td><td class="r opt num">4057.10</td><td class="r opt num">4048.35</td><td class="dim">V7</td></tr><tr><td class="r b gain">+284.10</td><td class="r gain">+9.47</td><td><span class="res gain">MANUAL</span></td><td class="r dim">20</td><td><span class="dir sell">SELL</span> <span class="num">0.30</span></td><td>XAUUSD</td><td class="opt">08-04 04:13</td><td class="r opt num">4057.93</td><td class="r opt num">4048.46</td><td class="dim">V7</td></tr><tr><td class="r b gain">+135.50</td><td class="r gain">+2.71</td><td><span class="res gain">賺</span></td><td class="r dim">21</td><td><span class="dir buy">BUY</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-04 05:00</td><td class="r opt num">4054.31</td><td class="r opt num">4057.02</td><td class="dim">V7</td></tr><tr><td class="r b gain">+202.80</td><td class="r gain">+6.76</td><td><span class="res gain">MANUAL</span></td><td class="r dim">22</td><td><span class="dir buy">BUY</span> <span class="num">0.30</span></td><td>XAUUSD</td><td class="opt">08-04 05:05</td><td class="r opt num">4050.02</td><td class="r opt num">4056.78</td><td class="dim">V7</td></tr><tr><td class="r b loss">-47.00</td><td class="r loss">-0.47</td><td><span class="res loss">蝕</span></td><td class="r dim">23</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 06:41</td><td class="r opt num">4055.68</td><td class="r opt num">4055.21</td><td class="dim">V7</td></tr><tr><td class="r b loss">-23.00</td><td class="r loss">-0.23</td><td><span class="res loss">蝕</span></td><td class="r dim">24</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 06:49</td><td class="r opt num">4053.84</td><td class="r opt num">4054.07</td><td class="dim">V7</td></tr><tr><td class="r b gain">+82.00</td><td class="r gain">+0.82</td><td><span class="res gain">賺</span></td><td class="r dim">25</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 08:34</td><td class="r opt num">4060.99</td><td class="r opt num">4061.81</td><td class="dim">V7</td></tr><tr><td class="r b gain">+267.00</td><td class="r gain">+2.67</td><td><span class="res gain">賺</span></td><td class="r dim">26</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 08:34</td><td class="r opt num">4059.14</td><td class="r opt num">4061.81</td><td class="dim">V7</td></tr><tr><td class="r b gain">+106.00</td><td class="r gain">+1.06</td><td><span class="res gain">賺</span></td><td class="r dim">27</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 08:36</td><td class="r opt num">4060.97</td><td class="r opt num">4062.03</td><td class="dim">V7</td></tr><tr><td class="r b gain">+521.00</td><td class="r gain">+5.21</td><td><span class="res gain">賺</span></td><td class="r dim">28</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 11:02</td><td class="r opt num">4062.53</td><td class="r opt num">4067.74</td><td class="dim">V7</td></tr><tr><td class="r b gain">+1,073.00</td><td class="r gain">+10.73</td><td><span class="res gain">賺</span></td><td class="r dim">29</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 11:03</td><td class="r opt num">4058.79</td><td class="r opt num">4069.52</td><td class="dim">V7</td></tr><tr><td class="r b gain">+2,151.00</td><td class="r gain">+21.51</td><td><span class="res gain">賺</span></td><td class="r dim">30</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 14:44</td><td class="r opt num">4048.64</td><td class="r opt num">4070.15</td><td class="dim">V7</td></tr><tr><td class="r b gain">+2,008.00</td><td class="r gain">+20.08</td><td><span class="res gain">賺</span></td><td class="r dim">31</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 14:44</td><td class="r opt num">4049.98</td><td class="r opt num">4070.06</td><td class="dim">V7</td></tr><tr><td class="r b gain">+277.00</td><td class="r gain">+2.77</td><td><span class="res gain">賺</span></td><td class="r dim">32</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 15:56</td><td class="r opt num">4078.46</td><td class="r opt num">4075.69</td><td class="dim">V7</td></tr><tr><td class="r b gain">+843.00</td><td class="r gain">+8.43</td><td><span class="res gain">賺</span></td><td class="r dim">33</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 16:07</td><td class="r opt num">4072.86</td><td class="r opt num">4064.43</td><td class="dim">V7</td></tr><tr><td class="r b loss">-253.00</td><td class="r loss">-2.53</td><td><span class="res loss">蝕</span></td><td class="r dim">34</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 16:07</td><td class="r opt num">4063.26</td><td class="r opt num">4065.79</td><td class="dim">V7</td></tr><tr><td class="r b gain">+2,141.00</td><td class="r gain">+21.41</td><td><span class="res gain">賺</span></td><td class="r dim">35</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 16:23</td><td class="r opt num">4066.51</td><td class="r opt num">4087.92</td><td class="dim">V7</td></tr><tr><td class="r b gain">+860.00</td><td class="r gain">+8.60</td><td><span class="res gain">賺</span></td><td class="r dim">36</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 16:23</td><td class="r opt num">4081.19</td><td class="r opt num">4089.79</td><td class="dim">V7</td></tr><tr><td class="r b loss">-872.00</td><td class="r loss">-8.72</td><td><span class="res loss">蝕</span></td><td class="r dim">37</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 16:34</td><td class="r opt num">4076.28</td><td class="r opt num">4085.00</td><td class="dim">V7</td></tr><tr><td class="r b gain">+158.00</td><td class="r gain">+1.58</td><td><span class="res gain">賺</span></td><td class="r dim">38</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 17:16</td><td class="r opt num">4086.15</td><td class="r opt num">4087.73</td><td class="dim">V7</td></tr><tr><td class="r b gain">+237.00</td><td class="r gain">+2.37</td><td><span class="res gain">賺</span></td><td class="r dim">39</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 17:26</td><td class="r opt num">4086.27</td><td class="r opt num">4083.90</td><td class="dim">V7</td></tr><tr><td class="r b loss">-855.00</td><td class="r loss">-8.55</td><td><span class="res loss">蝕</span></td><td class="r dim">40</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 17:38</td><td class="r opt num">4083.52</td><td class="r opt num">4074.97</td><td class="dim">V7</td></tr><tr><td class="r b gain">+277.00</td><td class="r gain">+2.77</td><td><span class="res gain">賺</span></td><td class="r dim">41</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 18:48</td><td class="r opt num">4080.04</td><td class="r opt num">4082.81</td><td class="dim">V7</td></tr><tr><td class="r b gain">+151.00</td><td class="r gain">+1.51</td><td><span class="res gain">賺</span></td><td class="r dim">42</td><td><span class="dir buy">BUY</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 19:05</td><td class="r opt num">4083.86</td><td class="r opt num">4085.37</td><td class="dim">V7</td></tr><tr><td class="r b loss">-2,087.00</td><td class="r loss">-20.87</td><td><span class="res loss">蝕</span></td><td class="r dim">43</td><td><span class="dir sell">SELL</span> <span class="num">1.00</span></td><td>XAUUSD</td><td class="opt">08-04 20:01</td><td class="r opt num">4076.64</td><td class="r opt num">4097.51</td><td class="dim">V7</td></tr><tr><td class="r b loss">-637.50</td><td class="r loss">-12.75</td><td><span class="res loss">蝕</span></td><td class="r dim">44</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-04 20:01</td><td class="r opt num">4084.78</td><td class="r opt num">4097.53</td><td class="dim">V7</td></tr><tr><td class="r b gain">+352.00</td><td class="r gain">+7.04</td><td><span class="res gain">賺</span></td><td class="r dim">45</td><td><span class="dir sell">SELL</span> <span class="num">0.50</span></td><td>XAUUSD</td><td class="opt">08-04 21:03</td><td class="r opt num">4094.99</td><td class="r opt num">4087.95</td><td class="dim">V7</td></tr></tbody>
       </table>
     </div>
   </div>
@@ -327,6 +340,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">01</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#475180057</span>
@@ -346,6 +360,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">02</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#475205410</span>
@@ -365,6 +380,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">03</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag manual">人手判斷</span>
     <span class="tk num">#476423106</span>
@@ -384,6 +400,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">04</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag manual">人手判斷</span>
     <span class="tk num">#477255165</span>
@@ -403,6 +420,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">05</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#478708031</span>
@@ -422,6 +440,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">06</span>
+    <span class="dir buy">BUY 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#479388973</span>
@@ -441,6 +460,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">07</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#479745669</span>
@@ -460,6 +480,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">08</span>
+    <span class="dir buy">BUY 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag manual">人手判斷</span>
     <span class="tk num">#479838687</span>
@@ -479,6 +500,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">09</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -498,6 +520,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">10</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -517,6 +540,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">11</span>
+    <span class="dir buy">BUY 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -536,6 +560,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">12</span>
+    <span class="dir buy">BUY 0.50</span>
     <span class="sym">NAS100</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -555,6 +580,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">13</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">NAS100</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -574,6 +600,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">14</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -593,6 +620,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">15</span>
+    <span class="dir sell">SELL 0.30</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#481638133</span>
@@ -612,6 +640,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">16</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -631,6 +660,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">17</span>
+    <span class="dir sell">SELL 0.30</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482250552</span>
@@ -650,6 +680,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">18</span>
+    <span class="dir sell">SELL 0.30</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482320184</span>
@@ -669,6 +700,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">19</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482753491</span>
@@ -688,6 +720,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">20</span>
+    <span class="dir sell">SELL 0.30</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482730493</span>
@@ -707,6 +740,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">21</span>
+    <span class="dir buy">BUY 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -726,6 +760,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">22</span>
+    <span class="dir buy">BUY 0.30</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">#482922262</span>
@@ -745,6 +780,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">23</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -764,6 +800,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">24</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -783,6 +820,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">25</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -802,6 +840,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">26</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -821,6 +860,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">27</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -840,6 +880,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">28</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -859,6 +900,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">29</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -878,6 +920,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">30</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -897,6 +940,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">31</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -916,6 +960,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">32</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -935,6 +980,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">33</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -954,6 +1000,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">34</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -973,6 +1020,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">35</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -992,6 +1040,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">36</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1011,6 +1060,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">37</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1030,6 +1080,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">38</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1049,6 +1100,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">39</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1068,6 +1120,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">40</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1087,6 +1140,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">41</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1106,6 +1160,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">42</span>
+    <span class="dir buy">BUY 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1125,6 +1180,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">43</span>
+    <span class="dir sell">SELL 1.00</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1144,6 +1200,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">44</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1163,6 +1220,7 @@ td.b{font-weight:650}
 <div class="rtop">
   <div class="rid">
     <span class="rn num">45</span>
+    <span class="dir sell">SELL 0.50</span>
     <span class="sym">XAUUSD</span>
     <span class="tag">V7 訊號</span>
     <span class="tk num">None</span>
@@ -1184,7 +1242,7 @@ td.b{font-weight:650}
   <div class="foot">
     起始 $500.00 · Swap 等調整 <span class="num">+0.27</span> ·
     截圖為 MetaTrader 5 實際成交紀錄，撳圖可放大<br>
-    生成於 2026-08-05 02:10
+    生成於 2026-08-05 02:20
   </div>
 </div>
 
