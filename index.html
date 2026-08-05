@@ -90,6 +90,8 @@ svg{display:block; width:100%; height:auto}
 .eqfill{fill:var(--brass); opacity:.09}
 .eqdot{fill:var(--brass); stroke:var(--surface); stroke-width:2}
 .eqdot.end{r:5.5}
+.dlab{font-size:10px; font-weight:650}
+.dlab.gain{fill:var(--gain)} .dlab.loss{fill:var(--loss)}
 .bar.gain{fill:var(--gain)} .bar.loss{fill:var(--loss)}
 .barg{cursor:default}
 .barg:hover .bar{opacity:.78}
@@ -219,7 +221,28 @@ td.dim{color:var(--ink-3)}
   </div>
 
   <div class="card">
-    <h2>資金曲線 · 美元</h2>
+    <h2>資金曲線 · 按日<span class="hint">每點 = 一日收市結餘</span></h2>
+    <div class="box">
+      <svg class="eq-svg" viewBox="0 0 720 200" width="100%" height="200" role="img"
+           aria-label="按日資金曲線">
+        <line class="grid" x1="66" y1="174.0" x2="706" y2="174.0"/><text class="axis" x="58" y="177.5" text-anchor="end">442</text><line class="grid" x1="66" y1="121.3" x2="706" y2="121.3"/><text class="axis" x="58" y="124.8" text-anchor="end">574</text><line class="grid" x1="66" y1="68.7" x2="706" y2="68.7"/><text class="axis" x="58" y="72.2" text-anchor="end">706</text><line class="grid" x1="66" y1="16.0" x2="706" y2="16.0"/><text class="axis" x="58" y="19.5" text-anchor="end">838</text><polygon class="eqfill" points="66.0,174.0 66.0,150.9 194.0,153.1 322.0,124.3 450.0,111.6 578.0,80.5 706.0,36.9 706.0,174.0"/>
+        <polyline class="eqline" points="66.0,150.9 194.0,153.1 322.0,124.3 450.0,111.6 578.0,80.5 706.0,36.9"/><circle class="eqdot" cx="194.0" cy="153.1" r="4.5"><title>2026-07-30
+結餘 $494.60
+當日 -5.40 美元</title></circle><text class="dlab loss" x="194.0" y="142.1" text-anchor="middle">-5</text><text class="axis" x="194.0" y="191" text-anchor="middle">07-30</text><circle class="eqdot" cx="322.0" cy="124.3" r="4.5"><title>2026-07-31
+結餘 $566.58
+當日 +71.98 美元</title></circle><text class="dlab gain" x="322.0" y="113.3" text-anchor="middle">+72</text><text class="axis" x="322.0" y="191" text-anchor="middle">07-31</text><circle class="eqdot" cx="450.0" cy="111.6" r="4.5"><title>2026-08-03
+結餘 $598.36
+當日 +31.78 美元</title></circle><text class="dlab gain" x="450.0" y="100.6" text-anchor="middle">+32</text><text class="axis" x="450.0" y="191" text-anchor="middle">08-03</text><circle class="eqdot" cx="578.0" cy="80.5" r="4.5"><title>2026-08-04
+結餘 $676.26
+當日 +77.89 美元</title></circle><text class="dlab gain" x="578.0" y="69.5" text-anchor="middle">+78</text><text class="axis" x="578.0" y="191" text-anchor="middle">08-04</text><circle class="eqdot end" cx="706.0" cy="36.9" r="4.5"><title>2026-08-05
+結餘 $785.25
+當日 +108.99 美元</title></circle><text class="dlab gain" x="706.0" y="25.9" text-anchor="middle">+109</text><text class="axis" x="706.0" y="191" text-anchor="middle">08-05</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>資金曲線 · 按單</h2>
     <div class="box">
       <svg class="eq-svg" viewBox="0 0 720 200" width="100%" height="200" role="img"
            aria-label="資金曲線，由 $500.00 到 $785.52">
@@ -1581,7 +1604,7 @@ td.dim{color:var(--ink-3)}
   <div class="foot">
     起始 $500.00 · Swap 等調整 <span class="num">+0.27</span> ·
     截圖為 MetaTrader 5 實際成交紀錄，撳圖可放大<br>
-    生成於 2026-08-05 21:43
+    生成於 2026-08-05 21:44
   </div>
 </div>
 
